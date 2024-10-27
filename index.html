@@ -21,7 +21,7 @@
         #editor-container {
             width: 50%;
             /* Initial width, adjustable by dragging */
-            border-right: 1px solid #ccc;
+            border-right: 3px solid #ccc;
         }
 
         #graph-container {
@@ -51,13 +51,11 @@
         </div>
     </div>
     <div id="container">
-        <div id="container">
-            <div id="editor-container">
-                <textarea id="yaml-editor"></textarea>
-            </div>
-            <div id="separator"></div> <!-- Draggable separator -->
-            <div id="graph-container"></div>
+        <div id="editor-container">
+            <textarea id="yaml-editor"></textarea>
         </div>
+        <div id="separator"></div> <!-- Draggable separator -->
+        <div id="graph-container"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
