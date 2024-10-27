@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Editor and Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <style>
+        #container {
+            display: flex;
+            height: calc(100% - 50px);
+            /* Full height minus the top bar */
+        }
+
+        #editor-container,
+        #graph-container {
+            height: 100%;
+        }
+
+        #editor-container {
+            width: 50%;
+            /* Initial width, adjustable by dragging */
+            border-right: 1px solid #ccc;
+        }
+
+        #graph-container {
+            width: 50%;
+            /* Initial width */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #separator {
+            width: 5px;
+            cursor: col-resize;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top-bar">
+        <div id="toolbox">
+            <button id="add-algorithm">+ Algorithm</button>
+            <button id="add-map-layer">+ Map Layer</button>
+        </div>
+        <div id="menu">
+            <input type="file" id="upload-yaml" accept=".yaml,.yml">
+            <button id="download-yaml">Download YAML</button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="container">
+            <div id="editor-container">
+                <textarea id="yaml-editor"></textarea>
+            </div>
+            <div id="separator"></div> <!-- Draggable separator -->
+            <div id="graph-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"></script>
+
+    <script src="mp2p-icp-graph-editor.js"></script>
+</body>
+
+</html>
